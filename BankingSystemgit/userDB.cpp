@@ -163,6 +163,9 @@ void UserDB::fileDataReadL(){
         }
 
         getline(TransactionFile,allUserLogs[n].username,'|');
+        if(allUserLogs[n].username[0] == '\n'){
+            allUserLogs[n].username.erase(0,1);
+        }
         getline(TransactionFile,tempBalance,'|');
         while (TransactionFile.peek() != '\n' && TransactionFile.peek() != EOF)
         {
@@ -175,6 +178,7 @@ void UserDB::fileDataReadL(){
         {
             allUserLogs[n].transactions.push_back(stod(tempTransactions[j]));
         }
+        tempTransactions.clear();
         n++;
     }
     }
