@@ -17,7 +17,7 @@ std::string Logs::getCurrentDateTime()
 
 
 void Logs::LogsReceiver(std::string logstr){
-    Logfile.push_back(logstr + " : " + getCurrentDateTime());
+    Logfile.push_back(getCurrentDateTime() +" : " + logstr);
 }
 
 void Logs::LogsGetter(){
@@ -59,7 +59,7 @@ Logs::~Logs(){
                 fileLog << Logfile[i] << std::endl;
             }
             fileLog << std::endl;
-            fileLog << sessionEnd << std::endl << std::endl;
+            fileLog << sessionEnd + getCurrentDateTime() + sessionEnd << std::endl << std::endl;
             break;
         }
         else {
@@ -69,7 +69,7 @@ Logs::~Logs(){
                 fileLog << Logfile[i] << std::endl;
             }
             fileLog << std::endl;
-            fileLog << sessionEnd << std::endl << std::endl;
+            fileLog << sessionEnd + getCurrentDateTime() + sessionEnd << std::endl << std::endl;
             break;
         }
     }
