@@ -10,7 +10,7 @@ class Logs
 private:
     std::fstream fileLog;
     std::vector<std::string> Logfile;
-    std::string sessionEnd = "_________  " + getCurrentDateTime() + "  ____________________";
+    std::string sessionEnd = "  ____________________ ";
 
     bool fileEmptyCheck();
     bool fileExistsCheck();
